@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Index Web Page for jQuery 1.4.2 Playground</title>
+        <style>
+            table { border: solid 1px darkgray; }
+            th, td { border: solid 1px darkgray; padding: 5px; }
+            .striped { background-color: lightgray; }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#hide-btn").click(function() {
+                    $("p").hide();
+                });
+            });
+
+            $(function() { // same as "$(document).ready"
+                $("#color-btn").click(function() {
+                    $("tr:odd").addClass("striped");
+                });
+            });
+
+            $(function() {
+                $("#eye").click(function() {                    
+                    $("#salary").toggle();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Web Page for jQuery 1.4.2 Playground</h1>
+
+        <h2>Hide feature</h2>
+        <p onclick="$(this).hide()">Paragraph to hide with jQuery. Click on me!</p>
+
+        <p>Paragraph to hide using button.</p>
+
+        <button id="hide-btn">Hide All Paragraphs</button>
+
+        <h2>Manipulate Style</h2>
+        <button id="color-btn">Strip Table</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>Carpenter</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nicolas</td>
+                    <td>Cage</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sandra</td>
+                    <td>Bullock</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
+    <h2>Toggle feature</h2>
+    <p>
+        Salary US$ <span id="salary">10,000</span>
+        <span id="eye">Eye (click here!)</span>
+    </p>
+
+    <h2>Fade Toggle Feature</h2>
+    <script>
+        $(function() {
+            $("#div-to-fade").click(function() {
+                $(this).fadeOut("slow");
+            });
+        });
+    </script>
+    <div id="div-to-fade" style="background-color: tomato;"> 
+        <p>
+            This is just a div to test fade feature.
+        </p>
+    </div>
+</html>
