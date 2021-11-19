@@ -89,4 +89,50 @@
             This is just a div to test fade feature.
         </p>
     </div>
+
+    <h2>Change Event</h2>
+
+    <script>
+        $(function() {
+            $("#selection").change(function() {
+                alert("You selected an item!");
+            });
+        });
+        
+        $(function() {
+            $("#selection").click(function() {
+                console.log("'<select>' element receive a click.");
+                $("#test-btn").attr('disabled', true);
+            })
+        });
+
+        $(function() {
+            $("#console-btn").click(function() {
+                console.log("The 'console-btn' was pushed!");
+            });
+        });
+    </script>
+    <form>
+        <select id="selection">
+            <option value="-1" selected="selected">Selecione...</option>
+            <option value="1">1st Option</option>
+            <option value="2">2nd Option</option>
+            <option value="3">3rd Option</option>
+        </select>
+        <button id="console-btn" type="button">Click to view console</button>        
+        <button id="test-btn">Actived</button>
+    </form>
+
+    <h2>Get HTML</h2>
+
+    <script>
+        $(function() {
+            $("#paragraph-btn").click(function() {
+                var html = $("#paragraph").html();
+                alert(html);
+            });            
+        });
+    </script>
+    <p id="paragraph">Just a text in a paragraph.</p>
+    <button id="paragraph-btn">Pushed to view the text</button>
 </html>
